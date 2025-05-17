@@ -8,7 +8,7 @@ public class testHealth : MonoBehaviour
     public Rigidbody2D PlayerRigid;
     private float jumpPower = 5f;
     public Image[] heart;
-    public Sprite fullHeart;
+    public Sprite[] fullHeart;
     public Sprite emptyHeart;
     public cameraShake cameraShake;
     private SpriteRenderer sr;
@@ -33,7 +33,7 @@ void Start()
 
     for (int i = 0; i < Mathf.Min(GameManager.Instance.Live, heart.Length); i++)
     {
-        heart[i].sprite = fullHeart;
+        heart[i].sprite = fullHeart[i];
     }
 }
     public void KillPlayer()

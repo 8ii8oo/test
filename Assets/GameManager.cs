@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameState
 {
@@ -15,11 +16,14 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance;
     public GameState state = GameState.Intro;
     public int Live = 3;
     public float playerStartTime;
     public static bool GameIsPaused = false;
+    public GameObject player;
+
 
 
     [Header("References")]
@@ -28,6 +32,8 @@ public class GameManager : MonoBehaviour
     public GameObject overBackground;
     public testHealth PlayerScript;
     public GameObject Setting;
+    public GameObject mainSetting;
+    public playermove playermoveScript;
 
 
     public TMP_Text scoreText;
@@ -40,24 +46,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   void Start()
-{
-    if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
+    void Start()
     {
-        IntroUI.SetActive(false);
-        enemySpawner.SetActive(true);
-        scoreText.gameObject.SetActive(false);
-        state = GameState.Playing;
-        playerStartTime = Time.time;
-        Time.timeScale = 1f;
 
-        PlayerPrefs.SetInt("Retry", 0); 
+        if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
+        {
+            IntroUI.SetActive(false);
+            enemySpawner.SetActive(true);
+            scoreText.gameObject.SetActive(true);
+            state = GameState.Playing;
+            playerStartTime = Time.time;
+            Time.timeScale = 1f;
+
+            PlayerPrefs.SetInt("Retry", 0);
+        }
+        else
+        {
+            IntroUI.SetActive(true);
+        }
     }
-    else 
-    {
-        IntroUI.SetActive(true); 
-    }
-}
 
 
     float CalCulateScore() //스코어 점수 속도
@@ -69,22 +76,23 @@ public class GameManager : MonoBehaviour
     {
         int score = Mathf.FloorToInt(CalCulateScore());
         int currentHighScore = PlayerPrefs.GetInt("highScore");
-        if(score > currentHighScore)
+        if (score > currentHighScore)
         {
             PlayerPrefs.SetInt("highScore", score);
             PlayerPrefs.Save();
         }
     }
 
-    void Update() 
+    void Update()
     {
         if (state == GameState.Playing) //플레이 중일 때
         {
             scoreText.gameObject.SetActive(true); //점수 띄우기
-            scoreText.text = "점수:" + Mathf.FloorToInt(CalCulateScore());
+            scoreText.text = "점수: " + Mathf.FloorToInt(CalCulateScore());
         }
         if (state == GameState.Playing && Live == 0) //피 없을 때 점수 띄우고 게임오버 화면
         {
+
             PlayerScript.KillPlayer();
             enemySpawner.SetActive(false);
             overBackground.SetActive(true);
@@ -92,10 +100,10 @@ public class GameManager : MonoBehaviour
             scoreText.text = "점수: " + GetHighScore() + "점";
         }
 
-      //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)
-         if (Input.GetKeyDown(KeyCode.Escape) && state == GameState.Playing) 
+        //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)
+        if (Input.GetKeyDown(KeyCode.Escape) && state == GameState.Playing)
         {
-            if(GameIsPaused)
+            if (GameIsPaused)
             {
                 Resume();
             }
@@ -115,19 +123,19 @@ public class GameManager : MonoBehaviour
         playerStartTime = Time.time;
     }
 
-   public void OnClickRetry() //죽었을 때 다시하기 버튼
-{
-    if (state == GameState.Dead)
+    public void OnClickRetry() //죽었을 때 다시하기 버튼
     {
-        PlayerPrefs.SetInt("Retry", 1);
-        SceneManager.LoadScene("SampleScene");
+        if (state == GameState.Dead)
+        {
+            PlayerPrefs.SetInt("Retry", 1);
+            SceneManager.LoadScene("SampleScene");
+        }
     }
-}
 
-int GetHighScore() 
-{
-    return PlayerPrefs.GetInt("highScore");
-}
+    int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("highScore");
+    }
 
     public void OnClickExit() //게임종료 버튼 눌렀을 때 메인화면으로 나가기
     {
@@ -138,25 +146,25 @@ int GetHighScore()
     }
 
 
-public void OnClickPlay()
-{
-    if(GameIsPaused == true)
+    public void OnClickPlay()
     {
-        Resume();
+        if (GameIsPaused == true)
+        {
+            Resume();
+        }
     }
-}
     public void Pasue()
     {
-            Setting.SetActive(true);
-            Time.timeScale = 0f;
-            GameIsPaused = true;
+        Setting.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 
     void Resume()
     {
-            Setting.SetActive(false);
-            Time.timeScale = 1f;
-            GameIsPaused = false;
+        Setting.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void OnClickSetting()
@@ -164,11 +172,11 @@ public void OnClickPlay()
         if (Input.GetKeyDown(KeyCode.Escape) && state != GameState.Dead)
         {
             state = GameState.Option;
-            
+
         }
     }
 
-    public void OnClickMain()
+    public void OnClickMain() //메인화면으로 이동
     {
         GameIsPaused = false;
         Time.timeScale = 1f;
@@ -176,6 +184,19 @@ public void OnClickPlay()
         SceneManager.LoadScene("SampleScene");
         Setting.SetActive(false);
 
+    }
+
+    public void OnClickMainSet()
+    {
+        if (state == GameState.Intro)
+        {
+            mainSetting.SetActive(true);
+        }
+    }
+
+    public void OnClickMainBot()
+    {
+        mainSetting.SetActive(false);
     }
 
 

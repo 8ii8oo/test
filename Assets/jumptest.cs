@@ -21,10 +21,13 @@ public class jumptest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if(GameManager.Instance.state == GameState.Playing)
         {
-            rigid.AddForce(Vector2.up*jumpPower, ForceMode2D.Impulse);
-            isGrounded = false;
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                isGrounded = false;
+            }
         }
     }
 

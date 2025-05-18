@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
 
     public TMP_Text scoreText;
+    public TMP_Text endScore;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        SaveHighScore();
 
         if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
         {
@@ -92,12 +94,13 @@ public class GameManager : MonoBehaviour
         }
         if (state == GameState.Playing && Live == 0) //피 없을 때 점수 띄우고 게임오버 화면
         {
-
+            scoreText.gameObject.SetActive(false);
             PlayerScript.KillPlayer();
             enemySpawner.SetActive(false);
             overBackground.SetActive(true);
             state = GameState.Dead;
-            scoreText.text = "점수: " + GetHighScore() + "점";
+            endScore.text = "점수: " + Mathf.FloorToInt(CalCulateScore()) + "점";
+            SaveHighScore();
         }
 
         //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)

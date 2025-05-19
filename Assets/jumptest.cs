@@ -10,12 +10,13 @@ public class jumptest : MonoBehaviour
 {
     public float jumpPower;
     private bool isGrounded = true;
-
+    public AudioSource sfxsource;
     Rigidbody2D rigid;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+     
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class jumptest : MonoBehaviour
             {
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 isGrounded = false;
+                sfxsource.Play();
             }
         }
     }

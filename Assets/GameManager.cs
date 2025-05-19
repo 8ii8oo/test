@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject player;
 
+  
+    
+
 
 
     [Header("References")]
@@ -34,6 +37,11 @@ public class GameManager : MonoBehaviour
     public GameObject Setting;
     public GameObject mainSetting;
     public playermove playermoveScript;
+
+    public AudioSource[] sfxPlayer;
+    public AudioClip[] sfxClip;
+    public enum Sfx { jump, damage = 3, red, blue, yellow, lever, green };
+    int sfxCursor;
 
 
     public TMP_Text scoreText;

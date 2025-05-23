@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         }
 
         //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)
-        if (Input.GetKeyDown(KeyCode.Escape) && state == GameState.Playing)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {

@@ -13,24 +13,25 @@ public class red : MonoBehaviour
     void RedPattern()
     {
        Vector2 baseDir = Vector2.down;
-    float[] angleOffsets = { -55f, 0f, 55f };
+    float[] angleOffsets = { -48f, -23f, 0f, 23f, 48f };
 
-    for (int i = -1; i < 2; i++)
+    for (int i = 0; i < 5; i++)
     {
         GameObject redCopy = Instantiate(redPrefab);
 
         Vector2 posVec = transform.position;
-        posVec.x += 1f * i;
-        if(i != 0)
-        {
-            posVec.y += 0.5f;
-        }
+        posVec.x += (i - 2) * 1f;
+
+        float angleOffset = angleOffsets[i];
+        float yOffset = Mathf.Abs(angleOffset) / 55f * 1f;  
+        posVec.y += yOffset;
+
         redCopy.transform.position = posVec;
 
-        redCopy.transform.rotation = Quaternion.Euler(0, 0, angleOffsets[i + 1]);
+        redCopy.transform.rotation = Quaternion.Euler(0, 0, angleOffsets[i]);
 
 
-        float angleInRadians = angleOffsets[i + 1] * Mathf.Deg2Rad;
+        float angleInRadians = angleOffsets[i] * Mathf.Deg2Rad;
         Vector2 rotatedDir = new Vector2(Mathf.Sin(angleInRadians), -Mathf.Cos(angleInRadians));
 
 

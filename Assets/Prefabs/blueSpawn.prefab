@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 657419421712236271}
   - component: {fileID: 4876714065643895670}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: blueSpawn
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

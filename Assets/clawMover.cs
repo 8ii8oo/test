@@ -16,10 +16,10 @@ public class clawMover : MonoBehaviour
 
 void Copy(){
 
-for(int i = -1; i < 2; i++)
+for(int i = -2; i < 3; i++)
 {
     Vector3 spawnPos = transform.position;
-    spawnPos.x += 4f * i; 
+    spawnPos.x += 2.7f * i; 
 
     StartCoroutine(SpawnWithWarning(spawnPos));
 

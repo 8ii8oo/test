@@ -11,6 +11,8 @@ public class playermove : MonoBehaviour
     public SpriteRenderer stopFlip;
     Animator playerAnimator;
 
+    
+
 
 
 

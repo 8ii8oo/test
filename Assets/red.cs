@@ -3,17 +3,21 @@ using UnityEngine;
 public class red : MonoBehaviour
 {
     public float speed = 5f;
+    Animator tigerAni;
 
     public GameObject redPrefab;
-    void Start()
+        void Start()
     {
-        RedPattern();
+        GameObject tigerObj = GameObject.Find("tiger");
+        tigerAni = tigerObj.GetComponent<Animator>();
+        tigerAni.SetTrigger("red");
+        Invoke("RedPattern", 0.5f);
     } 
 
     void RedPattern()
     {
        Vector2 baseDir = Vector2.down;
-    float[] angleOffsets = { -48f, -23f, 0f, 23f, 48f };
+    float[] angleOffsets = { -50f, -23f, 0f, 23f, 50f };
 
     for (int i = 0; i < 5; i++)
     {

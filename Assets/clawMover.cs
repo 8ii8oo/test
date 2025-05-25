@@ -2,17 +2,25 @@ using UnityEngine;
 
 using System.Collections;
 public class clawMover : MonoBehaviour
+
+//blue
+
 {
     
     public GameObject warningBlueUIPrefab;
-        public GameObject enemyBluePrefab;
-        
+    public GameObject enemyBluePrefab;
+    Animator tigerAni;
+    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
- Copy();
-}
+        GameObject tigerObj = GameObject.Find("tiger");
+        tigerAni = tigerObj.GetComponent<Animator>();
+        tigerAni.SetTrigger("blue");
+        Copy();
+    }
 
 void Copy(){
 

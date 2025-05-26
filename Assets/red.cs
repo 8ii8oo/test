@@ -11,7 +11,7 @@ public class red : MonoBehaviour
         GameObject tigerObj = GameObject.Find("tiger");
         tigerAni = tigerObj.GetComponent<Animator>();
         tigerAni.SetTrigger("red");
-        Invoke("RedPattern", 0.5f);
+        Invoke("RedPattern", 0.2f);
     } 
 
     void RedPattern()

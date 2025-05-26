@@ -17,12 +17,21 @@ public class Bullet : MonoBehaviour
     }
     void DestroySelf()
     {
-        Destroy(gameObject);
+
 
         if (gameObject == redDes)
         {
-             Invoke("DestroySelf", 1f);
+            Invoke("Dead", 1f);
+        }
+        else
+        {
+            Invoke("Dead", 0.5f);
         }
 
+    }
+
+    void Dead()
+    {
+        Destroy(gameObject);
     }
 }

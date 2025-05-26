@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8283754311025545730}
   - component: {fileID: 5808303867586401452}
-  - component: {fileID: 3105497890584441105}
   m_Layer: 0
   m_Name: redSpawn
   m_TagString: Untagged
@@ -47,15 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   redPrefab: {fileID: 7829424609348451815, guid: a5da6ae0c6c9ad9478c8c4adac55a02a, type: 3}
---- !u!114 &3105497890584441105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584487517007746452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181a80a7eb7801745a9d8e90e32e7f80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

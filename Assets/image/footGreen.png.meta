@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: c636d185e4aa8bb46bbec3b72e084fe7
+guid: b25f34e989aab004787e16ca5e034e3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6833212524869318181
-    second: ed16953b6a23c6b9_0
+      213: -8315607176991817390
+    second: footGreen_0
   - first:
-      213: 1763508623079008632
-    second: ed16953b6a23c6b9_1
+      213: 544218720194358419
+    second: footGreen_1
   - first:
-      213: 3914065692096579437
-    second: ed16953b6a23c6b9_2
+      213: 6275337527180061306
+    second: footGreen_2
   - first:
-      213: -8614176620353384576
-    second: ed16953b6a23c6b9_3
+      213: -6372957006766038598
+    second: footGreen_3
   - first:
-      213: -5467984756446793269
-    second: ed16953b6a23c6b9_4
+      213: 6314236413725709450
+    second: footGreen_4
   - first:
-      213: 2677335258027706323
-    second: ed16953b6a23c6b9_5
+      213: -8279775200780457151
+    second: footGreen_5
   - first:
-      213: -1497806953528877835
-    second: ed16953b6a23c6b9_6
+      213: 6512344638521285529
+    second: footGreen_6
   - first:
-      213: -509659944627181672
-    second: ed16953b6a23c6b9_7
+      213: -8892608798055762205
+    second: footGreen_7
   - first:
-      213: -1629720007497529409
-    second: ed16953b6a23c6b9_8
+      213: -4744314723586209619
+    second: footGreen_8
   - first:
-      213: -2792286548943198053
-    second: ed16953b6a23c6b9_9
+      213: -4137950744320436613
+    second: footGreen_9
   - first:
-      213: -3179499856678254610
-    second: ed16953b6a23c6b9_10
+      213: 6646646387857956382
+    second: footGreen_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,19 +102,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -127,7 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -156,13 +143,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_0
+      name: footGreen_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 1661
+        x: 70
+        y: 4090
         width: 613
-        height: 783
+        height: 784
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd90a6c996d8b21a0800000000000000
-      internalID: -6833212524869318181
+      spriteID: 251c6bb9457099c80800000000000000
+      internalID: -8315607176991817390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_1
+      name: footGreen_1
       rect:
         serializedVersion: 2
-        x: 625
-        y: 1596
+        x: 913
+        y: 4038
         width: 912
-        height: 848
+        height: 849
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,18 +180,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87966fccfbd397810800000000000000
-      internalID: 1763508623079008632
+      spriteID: 39c6d49ea047d8700800000000000000
+      internalID: 544218720194358419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_2
+      name: footGreen_2
       rect:
         serializedVersion: 2
-        x: 1413
-        y: 1536
+        x: 2144
+        y: 4055
         width: 1100
         height: 820
       alignment: 0
@@ -215,18 +202,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d67c5f4620e815630800000000000000
-      internalID: 3914065692096579437
+      spriteID: a7aee399b3a761750800000000000000
+      internalID: 6275337527180061306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_3
+      name: footGreen_3
       rect:
         serializedVersion: 2
-        x: 2603
-        y: 1412
+        x: 3562
+        y: 4159
         width: 1302
         height: 639
       alignment: 0
@@ -237,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08f8c5fe00c447880800000000000000
-      internalID: -8614176620353384576
+      spriteID: ab1afd22e55be87a0800000000000000
+      internalID: -6372957006766038598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_4
+      name: footGreen_4
       rect:
         serializedVersion: 2
-        x: 3971
-        y: 1334
+        x: 181
+        y: 3099
         width: 1387
-        height: 478
+        height: 609
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,18 +246,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc1fcbaa5d0dd14b0800000000000000
-      internalID: -5467984756446793269
+      spriteID: a8415f3609ca0a750800000000000000
+      internalID: 6314236413725709450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_5
+      name: footGreen_5
       rect:
         serializedVersion: 2
-        x: 56
-        y: 779
+        x: 1879
+        y: 3166
         width: 1430
         height: 468
       alignment: 0
@@ -281,18 +268,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d7ce576b3ec72520800000000000000
-      internalID: 2677335258027706323
+      spriteID: 14b6461b254581d80800000000000000
+      internalID: -8279775200780457151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_6
+      name: footGreen_6
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 761
+        x: 3631
+        y: 3220
         width: 1431
         height: 507
       alignment: 0
@@ -303,18 +290,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fc1dc0f288b63be0800000000000000
-      internalID: -1497806953528877835
+      spriteID: 99b1bf1e1fe706a50800000000000000
+      internalID: 6512344638521285529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_7
+      name: footGreen_7
       rect:
         serializedVersion: 2
-        x: 2970
-        y: 714
+        x: 133
+        y: 2268
         width: 1271
         height: 421
       alignment: 0
@@ -325,19 +312,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 897604c0bf25de8f0800000000000000
-      internalID: -509659944627181672
+      spriteID: 3e67f59c96b179480800000000000000
+      internalID: -8892608798055762205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_8
+      name: footGreen_8
       rect:
         serializedVersion: 2
-        x: 4258
-        y: 698
-        width: 1127
+        x: 1763
+        y: 2252
+        width: 1128
         height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -347,18 +334,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb743cda9421269e0800000000000000
-      internalID: -1629720007497529409
+      spriteID: da80df535eec82eb0800000000000000
+      internalID: -4744314723586209619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_9
+      name: footGreen_9
       rect:
         serializedVersion: 2
-        x: 525
-        y: 78
+        x: 3200
+        y: 2267
         width: 994
         height: 366
       alignment: 0
@@ -369,18 +356,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b98a32b8d2ecf39d0800000000000000
-      internalID: -2792286548943198053
+      spriteID: b7697bac8bb0396c0800000000000000
+      internalID: -4137950744320436613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ed16953b6a23c6b9_10
+      name: footGreen_10
       rect:
         serializedVersion: 2
-        x: 2227
-        y: 48
+        x: 4482
+        y: 2267
         width: 773
         height: 353
       alignment: 0
@@ -391,8 +378,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee7894fd9b520e3d0800000000000000
-      internalID: -3179499856678254610
+      spriteID: e1e18ef9ca1ad3c50800000000000000
+      internalID: 6646646387857956382
       vertices: []
       indices: 
       edges: []
@@ -410,18 +397,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ed16953b6a23c6b9_0: -6833212524869318181
-      ed16953b6a23c6b9_1: 1763508623079008632
-      ed16953b6a23c6b9_10: -3179499856678254610
-      ed16953b6a23c6b9_2: 3914065692096579437
-      ed16953b6a23c6b9_3: -8614176620353384576
-      ed16953b6a23c6b9_4: -5467984756446793269
-      ed16953b6a23c6b9_5: 2677335258027706323
-      ed16953b6a23c6b9_6: -1497806953528877835
-      ed16953b6a23c6b9_7: -509659944627181672
-      ed16953b6a23c6b9_8: -1629720007497529409
-      ed16953b6a23c6b9_9: -2792286548943198053
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
         {
             Invoke("Dead", 0.5f);
         }
-
     }
 
     void Dead()

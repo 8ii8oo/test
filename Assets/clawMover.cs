@@ -10,7 +10,8 @@ public class clawMover : MonoBehaviour
     public GameObject warningBlueUIPrefab;
     public GameObject enemyBluePrefab;
     Animator tigerAni;
-    
+    Vector3 target = new Vector3(0f, 5f, 0f);
+    Transform tigerPos; 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,11 +19,18 @@ public class clawMover : MonoBehaviour
     {
         GameObject tigerObj = GameObject.Find("tiger");
         tigerAni = tigerObj.GetComponent<Animator>();
+        tigerPos = tigerObj.GetComponent<Transform>();
+        
         tigerAni.SetTrigger("blue");
         Copy();
     }
 
-void Copy(){
+    void Update()
+    {
+        tigerPos.position = Vector3.Lerp(tigerAni.transform.position, target, 0.01f);
+    }
+
+    void Copy(){
 
 for(int i = -2; i < 3; i++)
 {
@@ -49,5 +57,3 @@ for(int i = -2; i < 3; i++)
     Destroy(gameObject);
 }
 }
-            
-

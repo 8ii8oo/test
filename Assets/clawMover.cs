@@ -12,6 +12,11 @@ public class clawMover : MonoBehaviour
     Animator tigerAni;
     Vector3 target = new Vector3(0f, 5f, 0f);
     Transform tigerPos; 
+    bool isMoving;
+    Vector2 startPosition;
+    Vector2 targetPosition;
+    float moveTime;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,13 +26,38 @@ public class clawMover : MonoBehaviour
         tigerAni = tigerObj.GetComponent<Animator>();
         tigerPos = tigerObj.GetComponent<Transform>();
         
+        
         tigerAni.SetTrigger("blue");
         Copy();
     }
 
     void Update()
     {
-        tigerPos.position = Vector3.Lerp(tigerAni.transform.position, target, 0.01f);
+        if (isMoving == false)
+        {
+            startPosition = (Vector2)tigerPos.transform.position;
+            targetPosition = (Vector2)(target);
+            moveTime = 0;
+            isMoving = true;
+        }
+
+
+        if (isMoving)
+        {
+            moveTime += Time.deltaTime;
+            float t = moveTime / 0.5f;
+
+            tigerPos.transform.position = (Vector3)Vector2.Lerp(startPosition, targetPosition, t);
+
+            if (t >= 1f)
+            {
+                tigerPos.transform.position = (Vector3)targetPosition;
+                isMoving = false;
+
+            }
+        }
+
+
     }
 
     void Copy(){

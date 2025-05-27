@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warning: {fileID: 382903552779762304, guid: 15ce4feab40670249b2f7198b6719c2d, type: 3}
   tailPrefab: {fileID: 6782109179790580627, guid: d3a7b452a0ff2f04bac2c795d43160b5, type: 3}
+  speed: 1

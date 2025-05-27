@@ -28,16 +28,14 @@ public class TigerPawHitbox : MonoBehaviour
 
     IEnumerator ShowWarningAndAttack()
     {
-        
-         yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(0.5f);
         if (warningBoxInstance != null)
         {
             Destroy(warningBoxInstance);
         }
 
         Instantiate(footGreenPrefab, transform.position, Quaternion.identity);
-
-
-    
+        
     }
 }

@@ -95,20 +95,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (state == GameState.Playing) //플레이 중일 때
+        if (state == GameState.Playing) 
         {
-            scoreText.gameObject.SetActive(true); //점수 띄우기
+            scoreText.gameObject.SetActive(true); 
             scoreText.text = "점수: " + Mathf.FloorToInt(CalCulateScore());
         }
-        if (state == GameState.Playing && Live == 0) //피 없을 때 점수 띄우고 게임오버 화면
+        if (state == GameState.Playing && Live == 0)
         {
-            scoreText.gameObject.SetActive(false);
-            PlayerScript.KillPlayer();
-            enemySpawner.SetActive(false);
-            overBackground.SetActive(true);
-            state = GameState.Dead;
-            endScore.text = "점수: " + Mathf.FloorToInt(CalCulateScore()) + "점";
-            SaveHighScore();
+            state = GameState.Dead; 
+            PlayerScript.KillPlayer(); 
+            StartCoroutine(ShowGameOverAfterDelay());
+        
         }
 
         //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)
@@ -125,6 +122,27 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    IEnumerator ShowGameOverAfterDelay()
+    {
+
+        Invoke("TimeZero", 0.5f);
+
+
+        yield return new WaitForSecondsRealtime(2f);
+
+
+        overBackground.SetActive(true);
+        scoreText.gameObject.SetActive(false);
+        endScore.text = "점수: " + Mathf.FloorToInt(CalCulateScore()) + "점";
+
+        SaveHighScore();
+    }
+
+    void TimeZero()
+    {
+        Time.timeScale = 0f;
+    }
+
 
     public void OnClickStart() //게임시작 버튼 눌렀을 때 
     {

@@ -12,16 +12,19 @@ public class testHealth : MonoBehaviour
     public Sprite emptyHeart;
     public cameraShake cameraShake;
     private SpriteRenderer sr;
+    GameObject tigerObj;
+    Animator playerAni;
     
 
      private bool isInvincible = false;
      public float score;
 
 
-void Start()
-{
-    UpdateHearts(); // 시작할 때 하트 그려주기
-    sr = GetComponent<SpriteRenderer>();
+    void Start()
+    {
+        UpdateHearts(); 
+        sr = GetComponent<SpriteRenderer>();
+        playerAni = GetComponent<Animator>();
 }
 
     public void UpdateHearts()
@@ -37,19 +40,25 @@ void Start()
     }
 }
     public void KillPlayer()
-{
-    
-    PlayerRigid.linearVelocity = Vector2.zero;
-    PlayerRigid.AddForce(Vector2.up*jumpPower, ForceMode2D.Impulse);
+    {
 
+        GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+        GetComponent<Animator>().SetTrigger("dead");
+        
 }
+
     void Hit()
     {
-        StartCoroutine(cameraShake.Shake(0.2f, 0.1f));
         GameManager.Instance.Live -= 1;
         UpdateHearts();
-        StartInvincible();
-        StartCoroutine(DamageEffect());
+        StartCoroutine(cameraShake.Shake(0.2f, 0.1f));
+
+        if (GameManager.Instance.Live > 0)
+        {
+
+            StartInvincible();
+            StartCoroutine(DamageEffect());
+        }
         
     }
 

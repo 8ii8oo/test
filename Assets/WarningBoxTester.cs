@@ -3,10 +3,7 @@ using System.Collections;
 
 public class WarningBoxTester : MonoBehaviour
 {
-    // Paw foot
-    //사용 ㄴㄴㄴㄴㄴㄴㄴㄴㄴ
-    //ㄴㄴㄴㄴ
-    //ㄴㄴㄴㄴ
+    public GameObject warningBoxYellow;
 
     public GameObject warningBox;
     public GameObject tigerPaw;
@@ -29,10 +26,10 @@ public class WarningBoxTester : MonoBehaviour
 
         // 2. 발바닥 등장 + 애니메이션 실행
         tigerPaw.SetActive(true);
-        tigerAnimator.Play("footGreenAni");
+        tigerAnimator.Play("New Animation");
 
         // 3. 애니메이션 끝나고 발바닥 숨김
-        yield return new WaitForSeconds(1f); // 애니메이션 길이만큼 대기
+        yield return new WaitForSeconds(3f); // 애니메이션 길이만큼 대기
         tigerPaw.SetActive(false);
     }
 }

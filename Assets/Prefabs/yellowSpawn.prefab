@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415600612784514558}
-  - component: {fileID: 6464642476862840296}
+  - component: {fileID: 3904858674620308217}
   m_Layer: 0
   m_Name: yellowSpawn
   m_TagString: Untagged
@@ -26,13 +26,13 @@ Transform:
   m_GameObject: {fileID: 4628131367512051036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12809396, y: -0.13059498, z: 0.023170061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6464642476862840296
+--- !u!114 &3904858674620308217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4628131367512051036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de86bb11ff0065a4f99d070b72d05a38, type: 3}
+  m_Script: {fileID: 11500000, guid: a4eff429971bb16448a190d2a583b452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tigerPaw: {fileID: 3384617691025837162, guid: 5c1b15fef6074d4458b80a2879103509, type: 3}
-  WarningBoxPrefab: {fileID: 450046940873679980, guid: dedd5001afa8b674c86fc9dd5cf1da6e, type: 3}
-  canvasTransform: {fileID: 0}
+  WarningBoxPrefab: {fileID: 7255077413167907436, guid: bafef838d0fe1d548893c46c3326e2b6, type: 3}
+  yellowPrefab: {fileID: 3384617691025837162, guid: 5c1b15fef6074d4458b80a2879103509, type: 3}
+  createPoint: {x: 0, y: 0}
+  moveSpeed: 1

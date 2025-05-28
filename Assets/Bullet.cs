@@ -3,11 +3,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     GameObject redDes;
+    GameObject yellowDes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         redDes = GameObject.Find("red");
+        yellowDes = GameObject.Find("Yellow");
         Invoke("DestroySelf", 0.5f);
+
+
     }
 
     // Update is called once per frame
@@ -22,6 +26,10 @@ public class Bullet : MonoBehaviour
         if (gameObject == redDes)
         {
             Invoke("Dead", 1f);
+        }
+        else if (gameObject == yellowDes)
+        {
+            Invoke("Dead", 2f);
         }
         else
         {

@@ -10,12 +10,14 @@ public class clawMover : MonoBehaviour
     public GameObject warningBlueUIPrefab;
     public GameObject enemyBluePrefab;
     Animator tigerAni;
-    Vector3 target = new Vector3(0f, 5f, 0f);
-    Transform tigerPos; 
-    bool isMoving;
+    Transform tigerPos;
+    bool isMoving = false;
     Vector2 startPosition;
     Vector2 targetPosition;
     float moveTime;
+    bool goingToTarget = true;
+
+    private Transform tigerTransform;
 
 
 
@@ -25,40 +27,67 @@ public class clawMover : MonoBehaviour
         GameObject tigerObj = GameObject.Find("tiger");
         tigerAni = tigerObj.GetComponent<Animator>();
         tigerPos = tigerObj.GetComponent<Transform>();
-        
-        
+
+        tigerTransform = GameObject.Find("tiger").GetComponent<Transform>();
+
+        startPosition = tigerTransform.position;
+        targetPosition = startPosition + new Vector2(0f, 5f);
+
+
+        moveTime = 0;
+
+
         tigerAni.SetTrigger("blue");
         Copy();
+
+        StartCoroutine(StartWait());
+    }
+
+    IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(0.8f);
+        isMoving = true;
     }
 
     void Update()
     {
-        if (isMoving == false)
-        {
-            startPosition = (Vector2)tigerPos.transform.position;
-            targetPosition = (Vector2)(target);
-            moveTime = 0;
-            isMoving = true;
-        }
-
-
         if (isMoving)
         {
             moveTime += Time.deltaTime;
             float t = moveTime / 0.5f;
+            t = Mathf.Clamp01(t);
 
-            tigerPos.transform.position = (Vector3)Vector2.Lerp(startPosition, targetPosition, t);
+            if (goingToTarget)
+                tigerPos.transform.position = Vector2.Lerp(startPosition, targetPosition, t);
+            else
+                tigerPos.transform.position = Vector2.Lerp(targetPosition, startPosition, t);
 
             if (t >= 1f)
-            {
-                tigerPos.transform.position = (Vector3)targetPosition;
-                isMoving = false;
+{
+                if (goingToTarget)
+                {
+                    tigerPos.transform.position = (Vector3)targetPosition;
+                    StartCoroutine(WaitAndReturn());
+                }
+                else
+                {
+                    tigerPos.transform.position = (Vector3)startPosition;
+                    Destroy(gameObject);
+                }
 
+                isMoving = false;
             }
         }
-
-
     }
+
+    IEnumerator WaitAndReturn()
+    {
+        yield return new WaitForSeconds(1f);
+        goingToTarget = false;
+        moveTime = 0f;
+        isMoving = true;
+    }
+    
 
     void Copy(){
 
@@ -76,14 +105,12 @@ for(int i = -2; i < 3; i++)
 {
     GameObject canvas = GameObject.Find("Canvas");
     GameObject warningCopy = Instantiate(warningBlueUIPrefab, canvas.transform);
-    
-
     warningCopy.GetComponent<RectTransform>().anchoredPosition = new Vector2(pos.x * 100, 0);
 
     yield return new WaitForSeconds(0.7f);
     Destroy(warningCopy);
 
-    GameObject BlueCopy = Instantiate(enemyBluePrefab, pos, Quaternion.identity);
-    Destroy(gameObject);
+    Instantiate(enemyBluePrefab, pos, Quaternion.identity);
+    
 }
 }

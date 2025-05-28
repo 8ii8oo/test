@@ -2470,8 +2470,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjects:
+  - {fileID: 8613209524706816233, guid: 94fb24b8535c83145bfed1d95f939e47, type: 3}
+  - {fileID: 6210723332145925083, guid: 53a90b5de39548744b0492f7c491288c, type: 3}
   - {fileID: 844114132008194576, guid: ea9f484739bee7040899649dab41fbdd, type: 3}
-  - {fileID: 844114132008194576, guid: ea9f484739bee7040899649dab41fbdd, type: 3}
+  - {fileID: 3584487517007746452, guid: dfccc2108dfc01840a37c8191a23a562, type: 3}
+  - {fileID: 4628131367512051036, guid: 69231ac8908eef548a3516c492a918ac, type: 3}
 --- !u!212 &920120224
 SpriteRenderer:
   m_ObjectHideFlags: 0

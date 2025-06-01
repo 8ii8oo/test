@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class testHealth : MonoBehaviour
 {
 
+    public AudioSource damageSound;
     public BoxCollider2D PlayerCollider;
     public Rigidbody2D PlayerRigid;
     private float jumpPower = 5f;
@@ -49,6 +50,7 @@ public class testHealth : MonoBehaviour
 
     void Hit()
     {
+        damageSound.Play();
         GameManager.Instance.Live -= 1;
         UpdateHearts();
         StartCoroutine(cameraShake.Shake(0.2f, 0.1f));

@@ -9,6 +9,7 @@ public class SounManager : MonoBehaviour
    
     public AudioSource musicsource;
     public AudioSource btnsource;
+    
     public AudioSource[] sfxsource;
     public AudioClip[] sfxClip;
     public enum Sfx { jump, damage, red, blue, yellow, lever, green }

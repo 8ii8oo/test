@@ -15,7 +15,7 @@ transform.Rotate(0, 0, 10 * Time.deltaTime);
         if (transform.eulerAngles.z > 9)
         {
             transform.Rotate(0, 0, -10 * Time.deltaTime);
-
+            
             
         }
     }

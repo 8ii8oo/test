@@ -23,9 +23,9 @@ public class Bullet : MonoBehaviour
     {
 
 
-        if (gameObject == redDes)
+        if (gameObject.name.Contains("red"))
         {
-            Invoke("Dead", 1f);
+            Invoke("Dead", 1.5f);
         }
         else if (gameObject == yellowDes)
         {

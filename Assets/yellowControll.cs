@@ -15,14 +15,18 @@ public class yellowControll : MonoBehaviour
     private bool goingToTarget = true;
     private float moveTime;
     private Vector2 startPosition;
-    Vector2 targetPosition = new Vector2(-8f, 0.4f);
+    Vector2 targetPosition = new Vector2(4.5f, 2f);
     public float moveSpeed = 1f;
 
     private Transform tigerTransform;
 
 
+
+
+
     void Start()
     {
+
 
         uiCanvas = FindFirstObjectByType<Canvas>();
         tigerTransform = GameObject.Find("tiger").GetComponent<Transform>();
@@ -35,7 +39,7 @@ public class yellowControll : MonoBehaviour
             isMoving = true;
 
 
-            StartCoroutine(SmoothRotate(goingToTarget ? 20f : -20f));
+            StartCoroutine(SmoothRotate(goingToTarget ? -20f : 20f));
 
             warningBoxInstance = Instantiate(WarningBoxPrefab, uiCanvas.transform);
 
@@ -66,6 +70,7 @@ public class yellowControll : MonoBehaviour
 
     void Update()
     {
+        
         if (isMoving)
         {
             moveTime += Time.deltaTime;
@@ -120,7 +125,7 @@ public class yellowControll : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         goingToTarget = false;
         isMoving = true;
-        StartCoroutine(SmoothRotate(-20f));
+        StartCoroutine(SmoothRotate(20f));
     }
 
 

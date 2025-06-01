@@ -19,11 +19,16 @@ public class clawMover : MonoBehaviour
 
     private Transform tigerTransform;
 
+  
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+
         GameObject tigerObj = GameObject.Find("tiger");
         tigerAni = tigerObj.GetComponent<Animator>();
         tigerPos = tigerObj.GetComponent<Transform>();
@@ -51,6 +56,7 @@ public class clawMover : MonoBehaviour
 
     void Update()
     {
+        
         if (isMoving)
         {
             moveTime += Time.deltaTime;
@@ -63,7 +69,7 @@ public class clawMover : MonoBehaviour
                 tigerPos.transform.position = Vector2.Lerp(targetPosition, startPosition, t);
 
             if (t >= 1f)
-{
+            {
                 if (goingToTarget)
                 {
                     tigerPos.transform.position = (Vector3)targetPosition;

@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
   
-    
+    [Header("Sound")]
+    public AudioSource playMusic;
+    public AudioSource mainMusic;
+    public AudioSource endMusic;
 
 
 
@@ -70,6 +73,8 @@ public class GameManager : MonoBehaviour
             state = GameState.Playing;
             playerStartTime = Time.time;
             Time.timeScale = 1f;
+            mainMusic.Stop();
+            playMusic.Play();
 
             PlayerPrefs.SetInt("Retry", 0);
         }
@@ -106,7 +111,8 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Playing && Live == 0)
         {
             state = GameState.Dead; 
-            PlayerScript.KillPlayer(); 
+            PlayerScript.KillPlayer();
+            playMusic.Stop();
             StartCoroutine(ShowGameOverAfterDelay());
         
         }
@@ -132,7 +138,8 @@ public class GameManager : MonoBehaviour
 
 
         yield return new WaitForSecondsRealtime(2f);
-
+        
+        endMusic.Play();
 
         overBackground.SetActive(true);
         scoreText.gameObject.SetActive(false);
@@ -149,6 +156,8 @@ public class GameManager : MonoBehaviour
 
     public void OnClickStart() //게임시작 버튼 눌렀을 때 
     {
+        playMusic.Play();
+        mainMusic.Stop();
         state = GameState.Playing;
         IntroUI.SetActive(false);
         enemySpawner.SetActive(true);
@@ -171,9 +180,9 @@ public class GameManager : MonoBehaviour
 
     public void OnClickExit() //게임종료 버튼 눌렀을 때 메인화면으로 나가기
     {
-        if (state != GameState.Intro)
+        if (state == GameState.Intro)
         {
-            SceneManager.LoadScene("SampleScene");
+            Application.Quit();
         }
     }
 

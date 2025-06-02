@@ -21,7 +21,7 @@ public class SounManager : MonoBehaviour
     int sfxCursor;
     void Start()
     {
-        playMusic.volume = PlayerPrefs.GetFloat("BGM", 0.15f);
+        playMusic.volume = PlayerPrefs.GetFloat("BGM", 0.25f);
         btnsource.volume = PlayerPrefs.GetFloat("BTN", 0.45f);
         
 

@@ -24,7 +24,7 @@ private Transform tigerTransform;
     void Start()
     {
         
-        uiCanvas = FindFirstObjectByType<Canvas>();
+        GameObject uiCanvas = GameObject.Find("Canvas");
         tigerTransform = GameObject.Find("tiger").GetComponent<Transform>();
         startPosition = tigerTransform.position;
 

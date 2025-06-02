@@ -16,7 +16,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-
+    
     public static GameManager Instance;
     public GameState state = GameState.Intro;
     public int Live = 3;
@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
+
         Time.timeScale = 1f;
         SaveHighScore();
 
@@ -134,7 +136,7 @@ public class GameManager : MonoBehaviour
 
         overBackground.SetActive(true);
         scoreText.gameObject.SetActive(false);
-        endScore.text = "점수: " + Mathf.FloorToInt(CalCulateScore()) + "점";
+        endScore.text = Mathf.FloorToInt(CalCulateScore()) + "점";
 
         SaveHighScore();
     }

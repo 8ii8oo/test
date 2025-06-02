@@ -8,7 +8,7 @@ public class yellowControll : MonoBehaviour
     public GameObject yellowPrefab;
 
     private GameObject warningBoxInstance;
-    private Canvas uiCanvas;
+    private GameObject uiCanvas;
     private Animator tigerAni;
     public Vector2 createPoint;
     private bool isMoving = false;
@@ -28,7 +28,7 @@ public class yellowControll : MonoBehaviour
     {
 
 
-        uiCanvas = FindFirstObjectByType<Canvas>();
+        GameObject uiCanvas = GameObject.Find("Canvas");
         tigerTransform = GameObject.Find("tiger").GetComponent<Transform>();
         startPosition = tigerTransform.position;
 

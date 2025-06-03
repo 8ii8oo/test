@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4d8ad428ccad99a42b240e946ee7f7ed
+guid: b1076d1a6036ee241a9146d260f7c6f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2911756912386882157
-    second: lever2_0
+      213: -8844534769050125379
+    second: lever6 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lever2_0
+      name: lever6 1_0
       rect:
         serializedVersion: 2
         x: 398
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39544ece38c5797d0800000000000000
-      internalID: -2911756912386882157
+      spriteID: dbbfc27ec76e14580800000000000000
+      internalID: -8844534769050125379
       vertices: []
       indices: 
       edges: []

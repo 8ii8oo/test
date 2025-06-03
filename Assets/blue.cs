@@ -26,7 +26,7 @@ public class blue : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             if (transform.position.y >= topY)
             {
-                goingUp = false; // 방향 전환
+                goingUp = false;
             }
         }
         else

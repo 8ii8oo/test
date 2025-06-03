@@ -292,7 +292,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e29bedfa90ad0a748a82fc5fb3a7a23c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6fa9f8793a92a1445be21f4b320c4d26, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -352,6 +352,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -6665191747073941426}
     m_Position: {x: 160, y: -230, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7718970253609063590}
+    m_Position: {x: 195, y: -165, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -3453503917549435746}
@@ -485,6 +488,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 074c44c1177d2624991a5b53100c8af4, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7718970253609063590
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: stopTigerAni
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 6fa9f8793a92a1445be21f4b320c4d26, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

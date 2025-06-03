@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ShowGameOverAfterDelay()
     {
 
-        Invoke("TimeZero", 0.6f);
+        Invoke("TimeZero", 0.5f);
 
 
         yield return new WaitForSecondsRealtime(2f);
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
 
         overBackground.SetActive(true);
         scoreText.gameObject.SetActive(false);
-        endScore.text = Mathf.FloorToInt(CalCulateScore()) + "점";
+        endScore.text = Mathf.FloorToInt(CalCulateScore() - 10) + "점";
 
         SaveHighScore();
     }

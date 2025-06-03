@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 28ad57f7299028345ad53022093622b3
+guid: 3b6cc7ec5198c084d883c1ab3beaf72f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2231909502266800244
-    second: lever4_0
-  - first:
-      213: -1413790681820415281
-    second: lever4_1
-  - first:
-      213: 2904949770364668440
-    second: lever4_2
-  - first:
-      213: -9024736911221632944
-    second: lever4_3
-  - first:
-      213: -5734944863426628491
-    second: lever4_4
+      213: -2824816280763882964
+    second: lever5 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lever4_0
+      name: lever5 1_0
       rect:
         serializedVersion: 2
-        x: 401
-        y: 516
-        width: 1461
+        x: 398
+        y: 520
+        width: 1462
         height: 1362
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3ebc7e046ffdc5b48bf84720fefdd6bf
-      internalID: 758969902
+      spriteID: c2224552f8c3cc8d0800000000000000
+      internalID: -2824816280763882964
       vertices: []
       indices: 
       edges: []
@@ -150,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0fa69c6fc441934468e44f7e5d28699e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,12 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      lever4_0: 758969902
-      lever4_1: -1413790681820415281
-      lever4_2: 2904949770364668440
-      lever4_3: -9024736911221632944
-      lever4_4: -5734944863426628491
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

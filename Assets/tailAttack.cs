@@ -35,7 +35,6 @@ public class tailAttack : MonoBehaviour
         moveTime = 0;
         isMoving = true;
 
-        // 방향에 따라 회전 부드럽게
         StartCoroutine(SmoothRotate(goingToTarget ? -20f : 20f));
         
     }
@@ -64,7 +63,6 @@ public class tailAttack : MonoBehaviour
                 }
                 else
                 {
-                    // 되돌아온 후 정지 → 회전 원위치
                     StartCoroutine(SmoothRotate(0f));
                 }
             }
@@ -78,7 +76,6 @@ public class tailAttack : MonoBehaviour
         goingToTarget = false;
         isMoving = true;
 
-        // 반대 방향 회전 시작
         StartCoroutine(SmoothRotate(20f));
     }
 

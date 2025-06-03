@@ -53,6 +53,8 @@ public class testHealth : MonoBehaviour
         damageSound.Play();
         GameManager.Instance.Live -= 1;
         UpdateHearts();
+
+        if(GameManager.Instance.Live >= 1)
         StartCoroutine(cameraShake.Shake(0.2f, 0.1f));
 
         if (GameManager.Instance.Live > 0)

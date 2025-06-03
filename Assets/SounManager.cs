@@ -15,15 +15,19 @@ public class SounManager : MonoBehaviour
     public AudioSource endMusic;
     
     
-    public AudioSource[] sfxsource;
-    public AudioClip[] sfxClip;
-    public enum Sfx { jump, damage, red, blue, yellow, lever, green }
-    int sfxCursor;
+
     void Start()
     {
-        playMusic.volume = PlayerPrefs.GetFloat("BGM", 0.25f);
-        btnsource.volume = PlayerPrefs.GetFloat("BTN", 0.45f);
-        
+    float bgm = PlayerPrefs.GetFloat("BGM", 0.25f);
+    float sfx = PlayerPrefs.GetFloat("BTN", 0.45f);
+
+    playMusic.volume = bgm;
+    mainMusic.volume = bgm;
+    endMusic.volume = bgm;
+
+    btnsource.volume = sfx;
+    jump.volume = sfx;
+    damage.volume = sfx;
 
     } 
 

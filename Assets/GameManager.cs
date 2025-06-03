@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (state == GameState.Playing) 
+        if (state == GameState.Playing) //다죽자상태
         {
             scoreText.gameObject.SetActive(true); 
             scoreText.text = "점수: " + Mathf.FloorToInt(CalCulateScore());
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ShowGameOverAfterDelay()
     {
 
-        Invoke("TimeZero", 0.5f);
+        Invoke("TimeZero", 0.6f);
 
 
         yield return new WaitForSecondsRealtime(2f);

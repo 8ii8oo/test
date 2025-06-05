@@ -43,8 +43,8 @@ private Transform tigerTransform;
             rectTransform.localPosition = createPoint;
 
 
-            rectTransform.anchorMin = new Vector2(1.03f, 0);
-            rectTransform.anchorMax = new Vector2(1.03f, 0);
+            rectTransform.anchorMin = new Vector2(1f, 0);
+            rectTransform.anchorMax = new Vector2(1f, 0);
             rectTransform.pivot = new Vector2(1, 0);
         }
 

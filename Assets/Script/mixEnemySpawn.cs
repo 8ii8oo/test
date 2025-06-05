@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class mixEnemySpawn : MonoBehaviour
@@ -21,8 +22,8 @@ public class mixEnemySpawn : MonoBehaviour
     [System.Serializable]
     public class PatternCombo
     {
-        public string name; // 참고용 이름
-        public GameObject[] patterns; // 조합할 프리팹들
+        public string name; 
+        public GameObject[] patterns; 
     }
 
     [Header("패턴 조합 배열")]
@@ -30,16 +31,23 @@ public class mixEnemySpawn : MonoBehaviour
 
     void Start()
     {
-        //랜덤으로 하나의 조합을 선택해서 동시에 소환
         int index = Random.Range(0, patternCombos.Length);
-        SpawnPatternCombo(patternCombos[index]);
+         StartCoroutine(SpawnPatternCombo(patternCombos[index]));
+        
     }
 
-    void SpawnPatternCombo(PatternCombo combo)
+    IEnumerator SpawnPatternCombo(PatternCombo combo)
+{
+    foreach (GameObject pattern in combo.patterns)
     {
-        foreach (GameObject pattern in combo.patterns)
+        if (pattern != null)
         {
-            Instantiate(pattern, transform.position, Quaternion.identity);
+            Vector3 spawnPos = transform.position;
+            GameObject instance = Instantiate(pattern, spawnPos, Quaternion.identity);
+            instance.transform.SetParent(null);
         }
+
+        yield return new WaitForSeconds(0.5f);
     }
+}
 }

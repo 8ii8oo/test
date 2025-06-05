@@ -16,7 +16,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    
+
     public static GameManager Instance;
     public GameState state = GameState.Intro;
     public int Live = 3;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject player;
 
-  
+
     [Header("Sound")]
     public AudioSource playMusic;
     public AudioSource mainMusic;
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public GameObject Setting;
     public GameObject mainSetting;
     public playermove playermoveScript;
+    public GameObject guide;
 
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
@@ -56,18 +57,40 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
     }
 
     void Start()
     {
-        
 
         Time.timeScale = 1f;
         SaveHighScore();
+        
+
+          bool guideSeen = PlayerPrefs.GetInt("GuideSeen", 0) == 1;
+
+    if (!guideSeen)
+    {
+        // 가이드 보여주기
+        IntroUI.SetActive(true);
+        guide.SetActive(true);
+
+        PlayerPrefs.SetInt("GuideSeen", 1);
+        PlayerPrefs.Save();
+    }
+    else
+    {
+        // 가이드 안 보여주기
+        IntroUI.SetActive(true);
+        guide.SetActive(false);
+    }
+
+
 
         if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
         {
             IntroUI.SetActive(false);
+
             enemySpawner.SetActive(true);
             scoreText.gameObject.SetActive(true);
             state = GameState.Playing;
@@ -78,10 +101,8 @@ public class GameManager : MonoBehaviour
 
             PlayerPrefs.SetInt("Retry", 0);
         }
-        else
-        {
-            IntroUI.SetActive(true);
-        }
+        
+       
     }
 
 
@@ -105,16 +126,16 @@ public class GameManager : MonoBehaviour
     {
         if (state == GameState.Playing) //다죽자상태
         {
-            scoreText.gameObject.SetActive(true); 
+            scoreText.gameObject.SetActive(true);
             scoreText.text = "점수: " + Mathf.FloorToInt(CalCulateScore());
         }
         if (state == GameState.Playing && Live == 0)
         {
-            state = GameState.Dead; 
+            state = GameState.Dead;
             PlayerScript.KillPlayer();
             playMusic.Stop();
             StartCoroutine(ShowGameOverAfterDelay());
-        
+
         }
 
         //esc버튼 눌렀을 때 설정 띄우기(BGM, 효과음, 계속하기, 메인화면, 게임종료)
@@ -138,7 +159,7 @@ public class GameManager : MonoBehaviour
 
 
         yield return new WaitForSecondsRealtime(2f);
-        
+
         endMusic.Play();
 
         overBackground.SetActive(true);
@@ -238,6 +259,11 @@ public class GameManager : MonoBehaviour
     public void OnClickMainBot()
     {
         mainSetting.SetActive(false);
+    }
+
+    public void OnClicGuideXBot()
+    { 
+        Destroy(guide);
     }
 
 

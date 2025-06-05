@@ -7,7 +7,7 @@ public class testHealth : MonoBehaviour
     public AudioSource damageSound;
     public BoxCollider2D PlayerCollider;
     public Rigidbody2D PlayerRigid;
-    private float jumpPower = 5f;
+   
     public Image[] heart;
     public Sprite[] fullHeart;
     public Sprite emptyHeart;

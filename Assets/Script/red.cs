@@ -3,14 +3,11 @@ using UnityEngine;
 public class red : MonoBehaviour
 {
     public float speed = 1f;
-    Animator tigerAni;
+    
 
     public GameObject redPrefab;
     void Start()
     {
-        GameObject tigerObj = GameObject.Find("tiger");
-        tigerAni = tigerObj.GetComponent<Animator>();
-        tigerAni.SetTrigger("red");
         Invoke("RedPatternCopy", 0.2f);
     }
 
@@ -34,7 +31,7 @@ public class red : MonoBehaviour
         {
             GameObject redCopy = Instantiate(redPrefab);
 
-            Vector2 posVec = transform.position;
+            Vector2 posVec = redPrefab.transform.position;
             posVec.x += (i - 2) * 1f;
 
             float angleOffset = angleOffsets[i];
@@ -65,7 +62,7 @@ public class red : MonoBehaviour
     {
         GameObject redCopy = Instantiate(redPrefab);
 
-        Vector2 posVec = transform.position;
+        Vector2 posVec = redPrefab.transform.position;
         posVec.x += (i - 1.5f) * 1f;
 
         float angleOffset = angleOffsets[i];

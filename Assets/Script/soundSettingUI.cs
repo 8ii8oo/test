@@ -40,7 +40,8 @@ public class SoundSettingUI : MonoBehaviour
 
     void SyncAllSliders()
     {
-        SoundSettingUI[] allUIs = GameObject.FindObjectsOfType<SoundSettingUI>();
+        SoundSettingUI[] allUIs = FindObjectsByType<SoundSettingUI>(FindObjectsSortMode.None);
+        
         foreach (var ui in allUIs)
         {
             if (ui != this)

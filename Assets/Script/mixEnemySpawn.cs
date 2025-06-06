@@ -47,7 +47,7 @@ public class mixEnemySpawn : MonoBehaviour
             instance.transform.SetParent(null);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0f);
     }
 }
 }

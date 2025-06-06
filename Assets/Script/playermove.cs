@@ -26,7 +26,7 @@ public class playermove : MonoBehaviour
     public void Update()
     {
 
-        if (GameManager.Instance.state == GameState.Playing)
+        if (GameManager.Instance.state == GameState.Playing &&  Time.timeScale > 0)
         {
             playerAnimator.SetFloat("speed", 0);
 

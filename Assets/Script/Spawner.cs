@@ -71,7 +71,8 @@ public class Spawner : MonoBehaviour
             TigerMover.Instance.StartBlueMove();
         }
 
-        else if (currentPatternIndex == 3)
+        else if (currentPatternIndex == 3 || currentPatternIndex == 15 ||
+         currentPatternIndex == 16 || currentPatternIndex == 17)
         {
             TigerMover.Instance.StartRedMove();
         }

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public float playerStartTime;
     public static bool GameIsPaused = false;
     public GameObject player;
-    private static bool guideSeenThisSession = false;
+    private static bool guideSeen = false;
 
 
 
@@ -69,21 +69,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SaveHighScore();
 
-
-        if (!guideSeenThisSession)
-        {
-            IntroUI.SetActive(true);
-            guide.SetActive(true);
-            guideSeenThisSession = true;
-        }
-        else
-        {
-            IntroUI.SetActive(true);
-            guide.SetActive(false);
-        }
-
-
-
+        IntroUI.SetActive(true);
 
         if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
         {
@@ -181,6 +167,17 @@ public class GameManager : MonoBehaviour
         IntroUI.SetActive(false);
         enemySpawner.SetActive(true);
         playerStartTime = Time.time;
+
+        if (!guideSeen)
+        {
+            guide.SetActive(true);
+            guideSeen = true;
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            guide.SetActive(false);
+        }
     }
 
     public void OnClickRetry() //죽었을 때 다시하기 버튼
@@ -262,14 +259,15 @@ public class GameManager : MonoBehaviour
     public void OnClicGuideXBot()
     {
         Destroy(guide);
+        Time.timeScale = 1f;
     }
 
-    void SetResolution() //창모드드
+    void SetResolution()
     {
-        int setWidth = 1280;
-        int setHeight = 720;
+        int setWidth = 3840;
+        int setHeight = 2160;
 
-        Screen.SetResolution(setWidth, setHeight, false);
+        Screen.SetResolution(setWidth, setHeight, true);
     }
 
 

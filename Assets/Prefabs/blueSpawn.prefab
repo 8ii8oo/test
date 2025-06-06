@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6457488491215999570}
   - component: {fileID: 657419421712236271}
   - component: {fileID: 4876714065643895670}
+  - component: {fileID: 8666867527824561082}
   m_Layer: 0
   m_Name: blueSpawn
   m_TagString: enemy
@@ -74,3 +75,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningBlueUIPrefab: {fileID: 450046940873679980, guid: dedd5001afa8b674c86fc9dd5cf1da6e, type: 3}
   enemyBluePrefab: {fileID: 901951423903338514, guid: d35397070057c0741930b6e4f8270ad9, type: 3}
+--- !u!114 &8666867527824561082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613209524706816233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d587621981441742ada925aa8e01a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

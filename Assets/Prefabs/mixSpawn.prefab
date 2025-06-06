@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6505306949067303426}
   - component: {fileID: 7113760209079712384}
+  - component: {fileID: -4314748409773505651}
   m_Layer: 0
   m_Name: mixSpawn
   m_TagString: Untagged
@@ -70,3 +71,15 @@ MonoBehaviour:
     patterns:
     - {fileID: 6210723332145925083, guid: 53a90b5de39548744b0492f7c491288c, type: 3}
     - {fileID: 844114132008194576, guid: ea9f484739bee7040899649dab41fbdd, type: 3}
+--- !u!114 &-4314748409773505651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477181973198673123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d587621981441742ada925aa8e01a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

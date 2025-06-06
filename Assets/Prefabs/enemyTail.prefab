@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074423188346914962}
   - component: {fileID: 3629356170938806926}
+  - component: {fileID: 2789555999183375432}
   m_Layer: 0
   m_Name: enemyTail
   m_TagString: enemy
@@ -47,3 +48,15 @@ MonoBehaviour:
   warning: {fileID: 382903552779762304, guid: 15ce4feab40670249b2f7198b6719c2d, type: 3}
   tailPrefab: {fileID: 6782109179790580627, guid: d3a7b452a0ff2f04bac2c795d43160b5, type: 3}
   speed: 1
+--- !u!114 &2789555999183375432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210723332145925083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d587621981441742ada925aa8e01a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

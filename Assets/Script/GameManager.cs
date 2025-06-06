@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float playerStartTime;
     public static bool GameIsPaused = false;
     public GameObject player;
+    private static bool guideSeenThisSession = false;
+
 
 
     [Header("Sound")]
@@ -62,28 +64,24 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        SetResolution();
 
         Time.timeScale = 1f;
         SaveHighScore();
-        
 
-          bool guideSeen = PlayerPrefs.GetInt("GuideSeen", 0) == 1;
 
-    if (!guideSeen)
-    {
-        // 가이드 보여주기
-        IntroUI.SetActive(true);
-        guide.SetActive(true);
+        if (!guideSeenThisSession)
+        {
+            IntroUI.SetActive(true);
+            guide.SetActive(true);
+            guideSeenThisSession = true;
+        }
+        else
+        {
+            IntroUI.SetActive(true);
+            guide.SetActive(false);
+        }
 
-        PlayerPrefs.SetInt("GuideSeen", 1);
-        PlayerPrefs.Save();
-    }
-    else
-    {
-        // 가이드 안 보여주기
-        IntroUI.SetActive(true);
-        guide.SetActive(false);
-    }
 
 
 
@@ -101,8 +99,8 @@ public class GameManager : MonoBehaviour
 
             PlayerPrefs.SetInt("Retry", 0);
         }
-        
-       
+
+
     }
 
 
@@ -262,8 +260,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void OnClicGuideXBot()
-    { 
+    {
         Destroy(guide);
+    }
+
+    void SetResolution()
+    {
+        int setWidth = 1280;
+        int setHeight = 720;
+
+        Screen.SetResolution(setWidth, setHeight, false);
     }
 
 

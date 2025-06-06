@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] gameObjects; // 10개 프리팹 (0~9)
+    public GameObject[] gameObjects;
 
     int currentPatternIndex = 0;
-    List<int> firstIndices = new List<int>(); // 초기 0~4 중 중복 없이 담을 리스트
+    List<int> firstIndices = new List<int>();
     bool firstFiveDone = false;
 
     void OnEnable()
@@ -49,7 +49,37 @@ public class Spawner : MonoBehaviour
 
         GameObject prefab = gameObjects[currentPatternIndex];
         Vector3 spawnPosition = new Vector3(prefab.transform.position.x, prefab.transform.position.y, 0f);
-        Instantiate(prefab, spawnPosition, Quaternion.identity);
+        GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        if (currentPatternIndex == 4)
+        {
+            TigerMover.Instance?.StartYellowMove();
+        }
+
+        else if (currentPatternIndex == 2)
+        {
+            TigerMover.Instance.StartLeverMove();
+        }
+
+        else if (currentPatternIndex == 1)
+        {
+            TigerMover.Instance.StartGreenMove();
+        }
+
+        else if (currentPatternIndex == 0)
+        {
+            TigerMover.Instance.StartBlueMove();
+        }
+
+        else if (currentPatternIndex == 3)
+        {
+            TigerMover.Instance.StartRedMove();
+        }
+
+        else
+        {
+            TigerMover.Instance.StartMixMove();
+        }
 
         Invoke("Spawn", 3.5f);
     }

@@ -47,4 +47,4 @@ MonoBehaviour:
   WarningBoxPrefab: {fileID: 7255077413167907436, guid: bafef838d0fe1d548893c46c3326e2b6, type: 3}
   yellowPrefab: {fileID: 3384617691025837162, guid: 5c1b15fef6074d4458b80a2879103509, type: 3}
   createPoint: {x: 0, y: 0}
-  moveSpeed: 1
+  SpawnerIndex: 4

@@ -264,7 +264,7 @@ public class GameManager : MonoBehaviour
         Destroy(guide);
     }
 
-    void SetResolution()
+    void SetResolution() //창모드드
     {
         int setWidth = 1280;
         int setHeight = 720;

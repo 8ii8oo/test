@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Playing) //다죽자상태
         {
             scoreText.gameObject.SetActive(true);
-            scoreText.text = "점수: " + Mathf.FloorToInt(CalCulateScore());
+            scoreText.text = "" + Mathf.FloorToInt(CalCulateScore());
         }
         if (state == GameState.Playing && Live == 0)
         {

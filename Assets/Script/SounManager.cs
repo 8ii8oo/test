@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+using static UnityEngine.AudioSource;
 
 public class SounManager : MonoBehaviour
 {
@@ -13,11 +15,14 @@ public class SounManager : MonoBehaviour
     public AudioSource jump;
     public AudioSource mainMusic;
     public AudioSource endMusic;
-    
+    public static SounManager instance;
+
+
     
 
     void Start()
     {
+        
     float bgm = PlayerPrefs.GetFloat("BGM", 0.25f);
     float sfx = PlayerPrefs.GetFloat("BTN", 0.45f);
 
@@ -51,11 +56,18 @@ public class SounManager : MonoBehaviour
         
     }
 
- 
+
+
 
     public void OnBTN()
     {
         btnsource.Play();
-
+        //StartCoroutine(PlayWithDelay());
     }
+
+     //IEnumerator PlayWithDelay()
+//{
+    //yield return new WaitForSecondsRealtime(0.1f); // 0.1초 대기
+   // btnsource.Play();
+//}
 }

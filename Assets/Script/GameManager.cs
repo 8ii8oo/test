@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text endScore;
 
-    void Awake()
+    void Awake() //여기 수정 오류난부분분
     {
         if (Instance == null)
         {
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
         IntroUI.SetActive(true);
 
-        if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면
+        if (PlayerPrefs.GetInt("Retry", 0) == 1) //처음 시작 화면 & 재시작 화면 눌렀을 때
         {
             IntroUI.SetActive(false);
 
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    IEnumerator ShowGameOverAfterDelay()
+    IEnumerator ShowGameOverAfterDelay() 
     {
 
         Invoke("TimeZero", 0.5f);
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Dead)
         {
             PlayerPrefs.SetInt("Retry", 1);
-            SceneManager.LoadScene("SampleScene");
+            StartCoroutine("RestartScene");
         }
     }
 
@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt("highScore");
     }
 
-    public void OnClickExit() //게임종료 버튼 눌렀을 때 메인화면으로 나가기
+    public void OnClickExit() //게임종료 버튼 눌렀을 때
     {
         if (state == GameState.Intro)
         {
@@ -232,15 +232,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnClickMain() //메인화면으로 이동
+    public void OnClickMain() //메인화면으로 이동 (여기수정 오류난부분)
     {
         GameIsPaused = false;
-        Time.timeScale = 1f;
         PlayerPrefs.SetInt("Retry", 0);
-        SceneManager.LoadScene("SampleScene");
-        Setting.SetActive(false);
+        StartCoroutine("RestartScene");
 
     }
+
+    IEnumerator RestartScene()
+{
+        yield return new WaitForSecondsRealtime(0.12f);
+        Time.timeScale = 1f;
+        Setting.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
+
+}
+
 
     public void OnClickMainSet()
     {
@@ -268,6 +276,5 @@ public class GameManager : MonoBehaviour
 
         Screen.SetResolution(setWidth, setHeight, true);
     }
-
 
 }
